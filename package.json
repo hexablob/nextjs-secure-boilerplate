@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx)\"",
+    "pre-commit-lint": "yarn lint-staged"
   },
   "dependencies": {
     "@types/node": "18.16.3",
@@ -41,6 +43,15 @@
     "eslint-plugin-simple-import-sort": "8.0.0",
     "eslint-plugin-testing-library": "5.9.1",
     "eslint-plugin-unused-imports": "2.0.0",
-    "prettier": "^2.8.8"
+    "@typescript-eslint/eslint-plugin": "4.24.0",
+    "@typescript-eslint/parser": "5.45.1"
+  },
+  "lint-staged": {
+    "**/*.(ts,tsx)": [
+      "yarn pre-commit-lint",
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
