@@ -16,7 +16,6 @@
     "@types/react-dom": "18.2.3",
     "autoprefixer": "10.4.14",
     "eslint": "8.39.0",
-    "eslint-config-next": "13.4.0",
     "lint-staged": "^13.2.2",
     "next": "13.4.0",
     "postcss": "8.4.23",
@@ -28,7 +27,9 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
-    "eslint-config-next": "^12.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint-config-next": "13.4.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-node": "0.3.4",
@@ -43,8 +44,7 @@
     "eslint-plugin-simple-import-sort": "8.0.0",
     "eslint-plugin-testing-library": "5.9.1",
     "eslint-plugin-unused-imports": "2.0.0",
-    "@typescript-eslint/eslint-plugin": "4.24.0",
-    "@typescript-eslint/parser": "5.45.1"
+    "prettier": "^2.8.8"
   },
   "lint-staged": {
     "**/*.(ts,tsx)": [
