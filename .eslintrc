@@ -39,7 +39,6 @@
     ],
     "import/no-named-as-default-member": "off",
     "comma-dangle": ["error", "always-multiline"],
-    "@typescript-eslint/semi": ["error"],
     "@typescript-eslint/quotes": ["error", "single"],
     "eol-last": ["error", "always"],
     "no-trailing-spaces": "error",

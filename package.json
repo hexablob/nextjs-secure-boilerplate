@@ -2,33 +2,36 @@
   "name": "nextjs-secure-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx)\"",
-    "pre-commit-lint": "yarn lint-staged"
+    "pre-commit-lint": "yarn lint-staged",
+    "test": "concurrently 'yarn dev' 'yarn wait-on tcp:3000 && yarn playwright test' --success first --kill-others"
   },
   "dependencies": {
-    "@types/node": "18.16.3",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.3",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.39.0",
-    "lint-staged": "^13.2.2",
     "next": "13.4.0",
-    "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "tailwindcss": "3.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@playwright/test": "^1.33.0",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.5",
+    "@types/react-dom": "18.2.3",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "10.4.14",
+    "concurrently": "^8.0.1",
+    "eslint": "8.39.0",
     "eslint-config-next": "13.4.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
@@ -44,7 +47,11 @@
     "eslint-plugin-simple-import-sort": "8.0.0",
     "eslint-plugin-testing-library": "5.9.1",
     "eslint-plugin-unused-imports": "2.0.0",
-    "prettier": "^2.8.8"
+    "lint-staged": "^13.2.2",
+    "postcss": "8.4.23",
+    "prettier": "^2.8.8",
+    "typescript": "5.0.4",
+    "wait-on": "^7.0.1"
   },
   "lint-staged": {
     "**/*.(ts,tsx)": [
